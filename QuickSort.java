@@ -1,6 +1,11 @@
 public class QuickSort {
+
+    static int trocas;
+    static int iteracoes;
     public static void main(String[] args) {
-        int[] vetor = new int[100];
+        QuickSort main = new QuickSort();
+
+        int[] vetor = new int[10000];
 
         for (int i = 0; i < vetor.length; i++) {
             vetor[i] = (int) (Math.random() * vetor.length);
@@ -8,10 +13,8 @@ public class QuickSort {
         }
 
         long startTime = System.nanoTime();
-        int trocas = 0;
-        int iteracoes = 0;
 
-        quick(vetor, 0, vetor.length - 1);
+        main.quick(vetor, 0, vetor.length - 1);
 
         long endTime = System.nanoTime();
         long tempoDeExecucao = endTime - startTime;
@@ -26,14 +29,14 @@ public class QuickSort {
         System.out.println("Número de Iterações: " + iteracoes);
 
     }
-    public static void quick(int[] vetor, int esquerda, int direita){
+    public void quick(int[] vetor, int esquerda, int direita){
         if(esquerda < direita){
             int pivo = pedaco(vetor, esquerda, direita);
             quick(vetor, esquerda, pivo);
             quick(vetor, pivo + 1, direita);
         }
     }
-    public static int pedaco(int[] vetor, int esquerda, int direita){
+    public int pedaco(int[] vetor, int esquerda, int direita){
         int meio = (int) (esquerda + direita) / 2;
         int pivot = vetor[meio];
         int i = esquerda - 1;
@@ -42,15 +45,18 @@ public class QuickSort {
             do{
                 i++;
             } while (vetor[i] < pivot);
+            iteracoes++;
             do {
                 j--;
             } while (vetor[j] > pivot);
+            iteracoes++;
             if (i >= j) {
                 return j;
             }
             int holder = vetor[i];
             vetor[i] = vetor[j];
             vetor[j] = holder;
+            trocas++;
         }
     }
 }
