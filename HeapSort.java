@@ -14,6 +14,7 @@ public class HeapSort {
         int n = vetor.length;
 
         for(int i = n / 2 - 1; i >= 0; i--){
+            iteracoes++;
              heap(vetor, n, i);
         }
 
