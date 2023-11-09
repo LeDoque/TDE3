@@ -38,9 +38,10 @@ public class HeapSort {
         for (int i = 0; i < vetor.length; i++) {
             System.out.println(vetor[i]);
         }
+        System.out.println("\n\n\nTempo de Execução: " + tempoDeExecucao + " ns");
         System.out.println("Número de Trocas: " + trocas);
         System.out.println("Número de Iterações: " + iteracoes);
-        System.out.println("\n\n\nTempo de Execução: " + tempoDeExecucao + " ns");
+
     }
     private void heap(int[] vetor, int n, int i){
         int raiz = i;

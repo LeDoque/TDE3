@@ -18,18 +18,18 @@ public class ShellSort {
         }
         h = (int) (h / 3);
 
-        int elemento, j;
+        int c, j;
         while (h > 0) {
             for (int i = h; i < n; i++) {
-                elemento = vetor[i];
+                c = vetor[i];
                 j = i;
                 iteracoes++;
-                while (j >= h && vetor[j - h] > elemento) {
+                while (j >= h && vetor[j - h] > c) {
                     vetor[j] = vetor[j - h];
                     j = j - h;
                     trocas++;
                 }
-                vetor[j] = elemento;
+                vetor[j] = c;
 
             }
             h = h / 2;
