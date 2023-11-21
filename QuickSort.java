@@ -5,22 +5,23 @@ public class QuickSort {
     public static void main(String[] args) {
         QuickSort main = new QuickSort();
 
-        int[] vetor = new int[10000];
+        int tamanho = 10;
+        int[] vetor = new int[tamanho];
 
-        for (int i = 0; i < vetor.length; i++) {
-            vetor[i] = (int) (Math.random() * vetor.length);
+        for (int i = 0; i < tamanho; i++) {
+            vetor[i] = (int) (Math.random() * tamanho);
             System.out.println(vetor[i]);
         }
 
         long startTime = System.nanoTime();
 
-        main.quick(vetor, 0, vetor.length - 1);
+        main.quick(vetor, 0, tamanho - 1);
 
         long endTime = System.nanoTime();
         long tempoDeExecucao = endTime - startTime;
 
         System.out.println("\n\n\nVetor ordenado");
-        for (int i = 0; i < vetor.length; i++) {
+        for (int i = 0; i < tamanho; i++) {
             System.out.println(vetor[i]);
         }
 

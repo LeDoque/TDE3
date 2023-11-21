@@ -1,9 +1,10 @@
 public class ShellSort {
     public static void main(String[] args) {
-        int[] vetor = new int[10000];
+        int tamanho = 10;
+        int[] vetor = new int[tamanho];
 
-        for (int i = 0; i < vetor.length; i++) {
-            vetor[i] = (int) (Math.random() * vetor.length);
+        for (int i = 0; i < tamanho; i++) {
+            vetor[i] = (int) (Math.random() * tamanho);
             System.out.println(vetor[i]);
         }
 
@@ -12,7 +13,7 @@ public class ShellSort {
         int iteracoes = 0;
 
         int h = 1;
-        int n = vetor.length;
+        int n = tamanho;
         while (h < n) {
             h = h * 3 + 1;
         }
@@ -39,7 +40,7 @@ public class ShellSort {
         long tempoDeExecucao = endTime - startTime;
 
         System.out.println("\n\n\nVetor ordenado");
-        for (int i = 0; i < vetor.length; i++) {
+        for (int i = 0; i < tamanho; i++) {
             System.out.println(vetor[i]);
         }
 

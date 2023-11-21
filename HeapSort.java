@@ -7,17 +7,18 @@ public class HeapSort {
     public static void main(String[] args) {
         HeapSort main = new HeapSort();
 
-        int[] vetor = new int[10000];
+        int tamanho = 10;
+        int[] vetor = new int[tamanho];
 
-        for(int i = 0; i < vetor.length; i++){
-            vetor[i] = (int) (Math.random() * vetor.length);
+        for(int i = 0; i < tamanho; i++){
+            vetor[i] = (int) (Math.random() * tamanho);
             System.out.println(vetor[i]);
         }
 
 
         long startTime = System.nanoTime();
 
-        int n = vetor.length;
+        int n = tamanho;
 
         for(int i = n / 2 - 1; i >= 0; i--){
             main.heap(vetor, n, i);
@@ -35,7 +36,7 @@ public class HeapSort {
         long tempoDeExecucao = endTime - startTime;
 
         System.out.println("\nVetor ordenado");
-        for (int i = 0; i < vetor.length; i++) {
+        for (int i = 0; i < tamanho; i++) {
             System.out.println(vetor[i]);
         }
         System.out.println("\n\n\nTempo de Execução: " + tempoDeExecucao + " ns");

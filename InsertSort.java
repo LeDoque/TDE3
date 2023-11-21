@@ -1,9 +1,10 @@
 public class InsertSort {
     public static void main(String[] args) {
-        int[] vetor = new int[10000];
+        int tamanho = 10;
+        int[] vetor = new int[tamanho];
 
-        for(int i = 0; i < vetor.length; i++) {
-            vetor[i] = (int) (Math.random() * vetor.length);
+        for(int i = 0; i < tamanho; i++) {
+            vetor[i] = (int) (Math.random() * tamanho);
             System.out.println(vetor[i]);
         }
 
@@ -12,7 +13,7 @@ public class InsertSort {
         int iteracoes = 0;
 
         int holder, j;
-        for(int i = 1; i < vetor.length; i++){
+        for(int i = 1; i < tamanho; i++){
             holder = vetor[i];
             j = i -1;
             iteracoes++;
@@ -27,7 +28,7 @@ public class InsertSort {
         long tempoDeExecucao = endTime - startTime;
 
         System.out.println("\n\n\nVetor ordenado");
-        for (int i = 0; i < vetor.length; i++) {
+        for (int i = 0; i < tamanho; i++) {
             System.out.println(vetor[i]);
         }
 
